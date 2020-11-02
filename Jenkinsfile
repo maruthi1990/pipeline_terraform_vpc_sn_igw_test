@@ -8,15 +8,15 @@ pipeline {
         string(name: 'Branch', defaultValue: 'master', description: 'Enter Branch Name to Run')
     }
     stages {
-        stage('CleanWorkspace'){
-           steps {
-              cleanWs()
-              sh 'whoami'
-           }
-        }
+        //stage('CleanWorkspace'){
+           //steps {
+              //cleanWs()
+              //sh 'whoami'
+           //}
+        //}
         stage('Terraform Code Pull'){
            steps {
-              git branch: '${Branch}', url: 'https://github.com/phani-rudra9/terfraform-modules-latest.git'
+              git branch: '${Branch}', url: 'https://github.com/maruthi1990/pipeline_terraform_vpc_sn_igw_test.git'
            }
         }
         stage('Terraform Initialize'){
